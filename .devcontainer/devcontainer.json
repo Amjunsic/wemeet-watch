@@ -1,0 +1,26 @@
+{
+	"name": "Flutter Wearable (Tizen + Wear OS)",
+	"image": "rlawodms364/we-meet:1.0.0",
+	"runArgs": [
+		"--network=host",
+		"--privileged"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Dart-Code.flutter",
+				"Dart-Code.dart-code"
+			]
+		}
+	},
+	"containerEnv": {
+    // 컨테이너 내 ADB가 호스트의 ADB 서버에 연결하도록 지시
+    // 'host.docker.internal'은 Docker Desktop(Windows/Mac)에서 호스트 주소로 자동 해석됩니다.
+    "ANDROID_ADB_SERVER_ADDRESS": "host.docker.internal",
+    // ADB 서버의 기본 포트 5037을 사용합니다.
+    "ANDROID_ADB_SERVER_PORT": "5037"
+  },
+    // 컨테이너가 생성된 '후에' 실행되어 안정성을 높입니다.
+	"postCreateCommand": "sudo chown -R vscode:vscode /opt/flutter /opt/android-sdk",
+	"remoteUser": "vscode"
+}

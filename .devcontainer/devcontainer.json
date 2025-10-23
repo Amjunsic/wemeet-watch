@@ -1,12 +1,16 @@
 {
 	"name": "Flutter Wearable (Tizen + Wear OS)",
-	"image": "rlawodms364/we-meet:1.0.0",
+	"image": "rlawodms364/we-meet:2.0.0",
 	"runArgs": [
 		"--network=host",
 		"--privileged"
 	],
 	"customizations": {
 		"vscode": {
+			"settings": {
+        // FVM이 관리하는 Flutter SDK 경로를 알려줍니다.
+        "dart.flutterSdkPath": ".fvm/flutter_sdk"
+      },
 			"extensions": [
 				"Dart-Code.flutter",
 				"Dart-Code.dart-code"
@@ -20,7 +24,6 @@
     // ADB 서버의 기본 포트 5037을 사용합니다.
     "ANDROID_ADB_SERVER_PORT": "5037"
   },
-    // 컨테이너가 생성된 '후에' 실행되어 안정성을 높입니다.
-	"postCreateCommand": "sudo chown -R vscode:vscode /opt/flutter /opt/android-sdk",
+	"postCreateCommand": "sudo chown -R vscode:vscode /opt/flutter /opt/android-sdk && flutter pub get",
 	"remoteUser": "vscode"
 }

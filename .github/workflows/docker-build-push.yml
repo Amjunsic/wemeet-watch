@@ -2,6 +2,7 @@ name: Docker 이미지 빌드 및 푸시
 
 # 1. 언제 실행할지 (트리거)
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
     paths:

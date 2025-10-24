@@ -44,5 +44,5 @@ jobs:
           #   푸시할 이미지 태그. (devcontainer.json의 태그와 일치시켜야 함)
           #   [팁] 아래처럼 2개를 쓰면 '3.0.0'과 'latest' 태그 둘 다 업데이트됩니다.
           tags: |
-            rlawodms364/we-meet:3.0.0
+            rlawodms364/we-meet:3.0.1
             rlawodms364/we-meet:latest

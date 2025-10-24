@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -y \
     liblzma-dev \
     openjdk-17-jdk \
     rpm gettext libgdiplus \
-    nodejs npm  \
     clang cmake ninja-build pkg-config libgtk-3-dev \
     apt-transport-https && \
     wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dearmor > /usr/share/keyrings/dart.gpg && \

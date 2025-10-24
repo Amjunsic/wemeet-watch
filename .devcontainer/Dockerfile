@@ -23,11 +23,9 @@ RUN apt-get update && apt-get install -y \
 # 4. 'vscode' 사용자 생성 및 sudo 설정 (root)
 ARG USERNAME=vscode
 RUN useradd -m -s /bin/bash -G sudo $USERNAME
-# 'sudoers' 그룹 대신 사용자에게 직접 NOPASSWD 권한 부여 (더 명확함)
 RUN echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$USERNAME
 
 # 5. 'vscode' 사용자로 전환 ---
-# (이 시점부터 모든 ENV, RUN은 'vscode' 사용자로 실행됨)
 USER ${USERNAME}
 WORKDIR /home/${USERNAME}
 
@@ -76,4 +74,5 @@ RUN wget -q https://download.tizen.org/sdk/Installer/tizen-studio_6.1/web-cli_Ti
 # --- 최종 설정 ---
 # WORKDIR을 /workspace로 변경 (VSCode Dev Container의 기본값)
 WORKDIR /workspace
+RUN chmod +x /workspace/scripts/*.sh
 CMD ["sleep", "infinity"]

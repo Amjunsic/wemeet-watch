@@ -1,7 +1,6 @@
-//3.0.0
 {
 	"name": "Flutter Wearable (Tizen + Wear OS)",
-	"image": "rlawodms364/we-meet:3.0.0",
+	"image": "rlawodms364/we-meet:3.0.1",
 	"runArgs": [
 		"--network=host",
 		"--privileged"
@@ -10,7 +9,7 @@
 		"vscode": {
 			"settings": {
 				// FVM이 관리하는 Flutter SDK 경로를 알려줍니다.
-				"dart.flutterSdkPath": "/home/vscode/.fvm/default"
+				"dart.flutterSdkPath": "${containerWorkspaceFolder}/.fvm/flutter_sdk"
 			},
 			"extensions": [
 				"Dart-Code.flutter",
@@ -20,13 +19,12 @@
 	},
 	"containerEnv": {
 		// 컨테이너 내 ADB가 호스트의 ADB 서버에 연결하도록 지시
-		// 'host.docker.internal'은 Docker Desktop(Windows/Mac)에서 호스트 주소로 자동 해석됩니다.
 		//"ANDROID_ADB_SERVER_ADDRESS": "host.docker.internal",
 		"ANDROID_ADB_SERVER_ADDRESS": "127.0.0.1",
 		// ADB 서버의 기본 포트 5037을 사용합니다.
 		"ANDROID_ADB_SERVER_PORT": "5037"
 	},
-	"postCreateCommand": "flutter pub get",
+	"postCreateCommand": "cp pubspecs/legacy.yaml pubspec.yaml && fvm use 3.16.2 --skip-setup",
 	"mounts": [
 		"source=firebase-config,target=/home/vscode/.firebase,type=volume"
 	],

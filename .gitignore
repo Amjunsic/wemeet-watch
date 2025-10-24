@@ -48,3 +48,8 @@ app.*.map.json
 
 #Docker Build
 .devcontainer/data
+
+#flutter temp files
+.flutter-plugins-dependencies
+.flutter-plugins
+/pubspec.lock

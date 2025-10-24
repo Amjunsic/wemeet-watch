@@ -1,0 +1,24 @@
+name: wemeet
+description: "TizenOS-flutter version"
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.8.0 <4.0.0' 
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # --- TizenOS-flutter, WerableOS 공용 패키지(legacy.yaml에 복붙해야함) ---
+
+
+  # --- WearableOS (Flutter 3.35.0) 전용 ---
+  health: ^14.0.0 # 최신 health 버전
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  flutter_lints: ^3.0.0

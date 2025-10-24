@@ -73,5 +73,4 @@ RUN wget -q https://download.tizen.org/sdk/Installer/tizen-studio_6.1/web-cli_Ti
 # --- 최종 설정 ---
 # WORKDIR을 /workspace로 변경 (VSCode Dev Container의 기본값)
 WORKDIR /workspace
-RUN chmod +x /workspace/scripts/*.sh
 CMD ["sleep", "infinity"]

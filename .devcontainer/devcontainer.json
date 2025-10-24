@@ -24,6 +24,6 @@
 		// ADB 서버의 기본 포트 5037을 사용합니다.
 		"ANDROID_ADB_SERVER_PORT": "5037"
 	},
-	"postCreateCommand": "cp pubspecs/legacy.yaml pubspec.yaml && fvm use 3.16.2 --skip-setup",
+	"postCreateCommand": "chmod +x scripts/*.sh && cp pubspecs/legacy.yaml pubspec.yaml && fvm use 3.16.2 --skip-setup",
 	"remoteUser": "vscode"
 }
